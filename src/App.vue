@@ -1,27 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <ColumnList :list="data" />
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
-
-export default defineComponent({
-  name: 'App',
-  components: {
-    HelloWorld
+<script setup lang="ts">
+import ColumnList, { ColumnsProps } from '@/components/ColumnList.vue';
+import { reactive } from 'vue';
+const data: Array<ColumnsProps> = reactive([
+  {
+    id: 10,
+    img: 'https://www.baidu.com/img/PCfb_5bf082d29588c07f842ccde3f97243ea.png',
+    title: '123',
+    desc: 'daf'
+  },
+  {
+    id: 11,
+    img: 'https://www.baidu.com/img/PCfb_5bf082d29588c07f842ccde3f97243ea.png',
+    title: '1234566',
+    desc: 'daf'
+  },
+  {
+    id: 12,
+    img: 'https://www.baidu.com/img/PCfb_5bf082d29588c07f842ccde3f97243ea.png',
+    title: '1234566',
+    desc: 'daf'
   }
-});
+])
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
 </style>
